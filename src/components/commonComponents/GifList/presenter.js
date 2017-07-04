@@ -1,21 +1,25 @@
 import React from 'react';
+import Gif from '../Gif';
 
 class presenter extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
     }
 
     componentDidMount(){
-        //console.log(this.props.state);
-        this.props.fetchGifs(0, 'gifs', 'cats');
+        this.props.fetchGifs(0, 'gifs', 'cat');
     }
 
     render(){
         return(
             <div className="gif-list">
-                {this.props.gifs.map((gif) => {
+                {this.props.gifs && this.props.gifs.map((gif) => {
                     return (
-                        <div key={gif.id} style={{ width: 250, height: 250, backgroundImage: 'url('+ gif.gif +')'}}></div>
+                        <Gif
+                            key={gif.id}
+                            gif={gif}
+                        />
                     )
                 })}
             </div>

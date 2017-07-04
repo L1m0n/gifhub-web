@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './config/configureStore';
-import GifList from './components/commonComponents/GifList'
+import GifList from './components/commonComponents/GifList';
+import 'font-awesome/css/font-awesome.min.css';
 
 const store = configureStore({});
 

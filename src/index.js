@@ -3,22 +3,16 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './config/configureStore';
-import GifList from './components/commonComponents/GifList';
+import App from './components/App';
 import 'font-awesome/css/font-awesome.min.css';
 
 const store = configureStore({});
 
-const App = () => (
+ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider>
-            <div>
-                <GifList />
-            </div>
+            <App/>
         </MuiThemeProvider>
-    </Provider>
-);
-
-ReactDOM.render(
-    <App/>,
+    </Provider>,
     document.getElementById('root')
 );

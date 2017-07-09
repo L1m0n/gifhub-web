@@ -28,15 +28,16 @@
     background-position: center center;
 }
 .gif__bar {
-    height:50px;
+    height:48px;
     width:100%;
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 2;
-    background: rgb(0, 188, 212);
+    background: #03A9F4;
     transform: translate(0, 100px);
     transition: transform 0.3s ease;
+    box-shadow: 0 1px 5px #333;
 }
 .gif__overlay {
     width: 100%;
@@ -51,5 +52,12 @@
     opacity: 1;
 }
 .gif__wrapper:hover .gif__bar {
+    transform: translate(0);
+}
+.gif__zoom {
+    transform: translate(0, -200px);
+    transition: transform 0.6s ease-in;
+}
+.gif__wrapper:hover .gif__zoom {
     transform: translate(0);
 }

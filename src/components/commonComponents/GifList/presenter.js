@@ -8,7 +8,7 @@ class presenter extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchGifs(0, 'gifs', 'cat');
+        this.props.fetchGifs(0, 'gifs', 'dog');
     }
 
     render(){

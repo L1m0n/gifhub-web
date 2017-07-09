@@ -36,11 +36,12 @@ class Gif extends React.Component{
                 </div>
                 <div className="gif__overlay">
                     <ActionZoomIn
+                        className="gif__zoom"
                         style={{
                             width: 50,
                             height: 50,
                             marginTop: 55,
-                            color: 'rgb(255, 64, 129)'
+                            color: '#FF4081'
                         }}
                     />
                 </div>

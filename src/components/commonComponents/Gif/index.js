@@ -1,5 +1,6 @@
 import React from 'react';
-import FontIcon from 'material-ui/FontIcon';
+import GifBar from '../GifBar';
+import ActionZoomIn from 'material-ui/svg-icons/action/zoom-in';
 require('../../../assets/css/gif.css');
 
 class Gif extends React.Component{
@@ -33,10 +34,17 @@ class Gif extends React.Component{
                     style={{backgroundImage: 'url(' + this.props.gif.gif + ')'}}
                     className="gif">
                 </div>
-                <FontIcon
-                    size={30}
-                    className="fa fa-search-plus fa-5x"
-                />
+                <div className="gif__overlay">
+                    <ActionZoomIn
+                        style={{
+                            width: 50,
+                            height: 50,
+                            marginTop: 55,
+                            color: 'rgb(255, 64, 129)'
+                        }}
+                    />
+                </div>
+                <GifBar/>
             </div>
         )
     }

@@ -7,4 +7,7 @@ body {
 }
 .header__appbar {
     background: #03A9F4;
+    display: flex;
+    align-content: center;
+    align-items: center;
 }

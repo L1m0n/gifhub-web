@@ -2,11 +2,6 @@ import React from 'react';
 import Gif from '../Gif';
 
 class presenter extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     componentDidMount(){
         this.props.fetchGifs(0, 'gifs', 'dog');
     }

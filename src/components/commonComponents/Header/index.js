@@ -1,7 +1,8 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import Menu from '../Menu';
+import UserBar from '../UserBar';
+import AuthorizationButtons from '../AuthorizationButtons';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 require('../../../assets/css/header.css');
 injectTapEventPlugin();
@@ -23,18 +24,21 @@ class Header extends React.Component{
                     iconStyleLeft={styles.menuIcon}
                     style={styles.appBar}
                     className='header__appbar'
-                    children={<div>adfdfsdfsd</div>}
+                    children={
+                        <div>
+                            <AuthorizationButtons/>
+                            <UserBar/>
+                        </div>
+                    }
                     iconClassNameLeft="fa fa-bars"
                     onLeftIconButtonTouchTap={this.handleToggle}
                 />
-                <Drawer
-                    docked={false}
+                <Menu
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}
-                >
-                    <MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>
-                    <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
-                </Drawer>
+                    onTouchTap={this.handleClose}
+                />
+
             </header>
         )
     }
@@ -45,7 +49,8 @@ const styles = {
         backgroundColor: '#03A9F4'
     },
     menuIcon: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        marginTop: 0
     }
 };
 export default Header;

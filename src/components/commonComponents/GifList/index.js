@@ -1,4 +1,3 @@
-import React from 'react';
 import fetchGifs from '../../../actions/fetchGifs';
 import presenter from './presenter';
 import {connect} from 'react-redux';

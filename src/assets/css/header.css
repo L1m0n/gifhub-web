@@ -20,6 +20,11 @@ span {
 .authorization-buttons span{
     margin: 0 10px;
 }
+.userbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .logo {
     position: absolute;
     top: 23px;

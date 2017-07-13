@@ -26,8 +26,7 @@ class Header extends React.Component{
                     className='header__appbar'
                     children={
                         <div>
-                            <AuthorizationButtons/>
-                            <UserBar/>
+                            {this.props.logedIn ? <UserBar/> : <AuthorizationButtons/>}
                         </div>
                     }
                     iconClassNameLeft="fa fa-bars"
@@ -38,7 +37,7 @@ class Header extends React.Component{
                     onRequestChange={(open) => this.setState({open})}
                     onTouchTap={this.handleClose}
                 />
-
+                <img className="logo" src="logo.svg" alt="Logo"/>
             </header>
         )
     }

@@ -2,6 +2,9 @@ body {
     padding: 0;
     margin: 0;
 }
+span {
+    color: #fff;
+}
 ::-webkit-scrollbar {
     display: none;
 }
@@ -10,4 +13,17 @@ body {
     display: flex;
     align-content: center;
     align-items: center;
+}
+.header {
+    position: relative;
+}
+.authorization-buttons span{
+    margin: 0 10px;
+}
+.logo {
+    position: absolute;
+    top: 22px;
+    left: 71px;
+    z-index: 1110;
+    width: 140px;
 }

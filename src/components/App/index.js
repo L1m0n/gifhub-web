@@ -1,6 +1,6 @@
 import React from 'react';
-import GifList from '../commonComponents/GifList';
-import Header from '../commonComponents/Header'
+import GifList from '../common/GifList';
+import Header from '../common/Header'
 
 const App = ({children}) => {
     return(

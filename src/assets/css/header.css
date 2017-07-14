@@ -32,3 +32,42 @@ span {
     z-index: 1110;
     width: 110px;
 }
+.appbar__right {
+    display: flex;
+    align-items: center;
+}
+.search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height:34px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 36px;
+    transition: width 0.3s ease;
+}
+.search-opened {
+    width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
+}
+.search__input {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-left: 35px;
+    border: none;
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    border-radius: 2px;
+}
+.search-opened .search__input {
+    padding-left: 15px;
+    opacity: 1;
+}
+.search__icon {
+    position: absolute !important;
+    top: 0;
+    right:0;
+}

@@ -4,9 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 const AuthorizationButtons = (props) => {
     return (
         <div className="authorization-buttons">
-            <RaisedButton label="Sign up" secondary={true} />
+            <RaisedButton label="Sign up" backgroundColor='#FF4081' labelColor="#fff" />
             <span>or</span>
-            <RaisedButton label="Login" secondary={true} />
+            <RaisedButton label="Login" backgroundColor='#FFFFFF' labelColor="#333" />
         </div>
     )
 };

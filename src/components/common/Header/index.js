@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Menu from '../Menu';
 import UserBar from '../UserBar';
+import Search from '../Search';
 import AuthorizationButtons from '../AuthorizationButtons';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 require('../../../assets/css/header.css');
@@ -25,7 +26,8 @@ class Header extends React.Component{
                     style={styles.appBar}
                     className='header__appbar'
                     children={
-                        <div>
+                        <div className="appbar__right">
+                            <Search/>
                             {this.props.logedIn ? <UserBar/> : <AuthorizationButtons/>}
                         </div>
                     }

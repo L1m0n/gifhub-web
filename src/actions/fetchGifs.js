@@ -18,9 +18,8 @@ const fetchGifs = (offset, category, query) => {
                     })
                 };
                 data.gifs = data.gifs.sort((a, b) => a.size + b.size);
-                console.log(data.gifs.map(a => a.size));
                 dispatch(setGifs(data));
-                dispatch(setOffset(offset + json.pagination.count));
+                dispatch(setOffset(json.pagination.offset));
             })
     }
 };

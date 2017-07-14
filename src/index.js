@@ -6,7 +6,11 @@ import configureStore from './config/configureStore';
 import App from './components/App';
 import 'font-awesome/css/font-awesome.min.css';
 
-const store = configureStore({});
+const store = configureStore({
+    data: {
+        query: 'cat'
+    }
+});
 
 ReactDOM.render(
     <Provider store={store}>

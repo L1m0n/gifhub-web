@@ -3,7 +3,7 @@ import Gif from '../Gif';
 
 class presenter extends React.Component {
     componentDidMount(){
-        this.props.fetchGifs(0, 'gifs', 'dog');
+        this.props.fetchGifs(-25, 'gifs', 'dog');
     }
 
     render(){

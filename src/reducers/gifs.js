@@ -2,10 +2,14 @@ import * as actionTypes from '../actions/actionTypes';
 
 const gifs = (state = {gifs: []}, action) => {
     switch (action.type) {
-        case actionTypes.ADD_GIFS:
+        case actionTypes.SET_GIFS:
             return Object.assign({}, state, {
-                gifs: state.gifs.concat(action.gifs.gifs)
+                gifs: action.gifs.gifs
             });
+        case actionTypes.SET_QUERY:
+            return Object.assign({}, state, {query: action.query});
+        case actionTypes.SET_OFFSET:
+            return Object.assign({}, state, {offset: action.offset});
         default:
             return state;
     }

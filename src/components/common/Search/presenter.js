@@ -10,14 +10,22 @@ class presenter extends React.Component {
             opened: false
         }
     }
+
+    _onSubmit(e, input){
+        e.preventDefault();
+        this.props.search(0, 'gifs', input.value);
+        this.props.setQuery(input.value);
+        //console.log(input.value);
+    }
     
     render(){
+        let input = this.refs.input;
         return(
-            <form className={this.state.opened ? 'search search-opened' : 'search'}>
+            <form onSubmit={(e) => {this._onSubmit(e, input)}} className={this.state.opened ? 'search search-opened' : 'search'}>
                 <IconButton onTouchTap={() => this.setState({opened: !this.state.opened})} className="search__icon" style={{padding: 0, height: 36, width: 36}}>
                     <ActionSearch style={{width: 36, height: 36}}  color={this.state.opened ? '#BDBDBD' : '#fff'} />
                 </IconButton>
-                <input type="text" className="search__input"/>
+                <input ref="input" type="text" className="search__input"/>
             </form>
         )
     }

@@ -1,5 +1,7 @@
 import {connect} from 'react-redux';
 import presenter from './presenter';
+import setQuery from '../../../actions/setQuery';
+import fetchGifs from '../../../actions/fetchGifs';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,7 +11,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        setQuery:  (query) => {
+            dispatch(setQuery(query));
+        },
+        search: (offset, category, query) => {
+            dispatch(fetchGifs(offset, category, query));
+        }
     }
 };
 

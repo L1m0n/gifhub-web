@@ -1,4 +1,5 @@
-import addGifs from './addGifs';
+import setGifs from './setGifs';
+import setOffset from './setOffset';
 
 const fetchGifs = (offset, category, query) => {
     return function (dispatch) {
@@ -6,7 +7,6 @@ const fetchGifs = (offset, category, query) => {
             .then((response) => response.json())
             .then((json) => {
                 const data = {
-                    offset: offset + json.pagination.count,
                     gifs: json.data.map((gif) => {
                         return({
                             id: gif.id,
@@ -17,8 +17,10 @@ const fetchGifs = (offset, category, query) => {
                         })
                     })
                 };
-                data.gifs = data.gifs.sort((a, b) => a.size - b.size);
-                dispatch(addGifs(data));
+                data.gifs = data.gifs.sort((a, b) => a.size + b.size);
+                console.log(data.gifs.map(a => a.size));
+                dispatch(setGifs(data));
+                dispatch(setOffset(offset + json.pagination.count));
             })
     }
 };

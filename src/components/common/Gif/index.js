@@ -45,7 +45,7 @@ class Gif extends React.Component{
                         }}
                     />
                 </div>
-                <GifBar/>
+                <GifBar showSnackbar={this.props.showSnackbar} gif={this.props.gif}/>
             </div>
         )
     }

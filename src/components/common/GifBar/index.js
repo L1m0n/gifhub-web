@@ -25,13 +25,11 @@ const GifBar = (props) => {
                 iconStyle={styles.icon}
                 iconClassName="fa fa-chain" />
             <IconButton
-
-                /*onTouchTap={(e)=>{copy(e)}}*/
                 title="Download"
                 hoveredStyle={styles.hover}
                 iconStyle={styles.icon}
                 iconClassName="fa fa-save" >
-                <a className="download-button" href={props.gif.gif}  download={props.gif.gif}></a>
+                <a className="download-button" href={props.gif.original}  download='gifhub'></a>
             </IconButton>
             <IconButton
                 onTouchTap={(e)=>{copy(e)}}

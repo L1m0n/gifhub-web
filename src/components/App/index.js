@@ -1,15 +1,14 @@
 import React from 'react';
-import GifList from '../common/GifList';
 import Header from '../common/Header';
-import Navigation from '../common/Navigation';
+import SearchPage from '../pages/SearchPage';
+import 'font-awesome/css/font-awesome.min.css';
 
 const App = ({children}) => {
     return(
         <div>
             <Header/>
-            <Navigation/>
             {children}
-            <GifList/>
+            <SearchPage/>
         </div>
     )
 };

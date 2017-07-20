@@ -12,12 +12,13 @@ const fetchGifs = (offset, category, query) => {
                             id: gif.id,
                             gif: gif.images.downsized.url,
                             thumb: gif.images.downsized_still.url,
+                            original: gif.images.original.url,
                             url: gif.url,
                             size: gif.images.downsized.size
                         })
                     })
                 };
-                data.gifs = data.gifs.sort((a, b) => a.size + b.size);
+                data.gifs = data.gifs.sort((a, b) => a.size - b.size);
                 dispatch(setGifs(data));
                 dispatch(setOffset(json.pagination.offset));
             })

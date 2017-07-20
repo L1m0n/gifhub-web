@@ -1,10 +1,12 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React from 'react';
 import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './config/configureStore';
 import App from './components/App';
-import 'font-awesome/css/font-awesome.min.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import SearchPage from './components/pages/SearchPage';
+import GifList from './components/common/GifList';
 
 const store = configureStore({
     data: {
@@ -15,7 +17,14 @@ const store = configureStore({
 ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider>
-            <App/>
+            <BrowserRouter>
+                <App>
+                    <Switch>
+                        <Route exact path="/" component={SearchPage}/>
+                        <Route  path="/asd" component={GifList}/>
+                    </Switch>
+                </App>
+            </BrowserRouter>
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('root')

@@ -32,6 +32,9 @@ span {
     z-index: 1110;
     width: 110px;
 }
+.logo img {
+    max-width:110px;
+}
 .appbar__right {
     display: flex;
     align-items: center;

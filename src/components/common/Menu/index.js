@@ -10,7 +10,7 @@ const Menu = (props) => {
             open={props.open}
             onRequestChange={props.onRequestChange}
         >
-            <Link className="menu__item" to="/"><MenuItem onTouchTap={props.onTouchTap}>Menu Item</MenuItem></Link>
+            <Link className="menu__item" to="/"><MenuItem onTouchTap={props.onTouchTap}>Home</MenuItem></Link>
             <Link className="menu__item" to="/gif-preview"><MenuItem onTouchTap={props.onTouchTap}>Menu Item 2</MenuItem></Link>
         </Drawer>
     )

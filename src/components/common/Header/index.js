@@ -5,6 +5,7 @@ import UserBar from '../UserBar';
 import Search from '../Search';
 import AuthorizationButtons from '../AuthorizationButtons';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import {Link} from 'react-router-dom';
 require('../../../assets/css/header.css');
 injectTapEventPlugin();
 
@@ -39,7 +40,11 @@ class Header extends React.Component{
                     onRequestChange={(open) => this.setState({open})}
                     onTouchTap={this.handleClose}
                 />
-                <img className="logo" src="logo.svg" alt="Logo"/>
+                <div className="logo">
+                    <Link to="/">
+                        <img src="logo.svg" alt="Logo"/>
+                    </Link>
+                </div>
             </header>
         )
     }

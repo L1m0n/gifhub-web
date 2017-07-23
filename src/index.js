@@ -4,9 +4,7 @@ import {Provider} from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './config/configureStore';
 import App from './components/App';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import SearchPage from './components/pages/SearchPage';
-import GifList from './components/common/GifList';
+import {BrowserRouter} from 'react-router-dom';
 
 const store = configureStore({
     data: {
@@ -18,12 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider>
             <BrowserRouter>
-                <App>
-                    <Switch>
-                        <Route exact path="/" component={SearchPage}/>
-                        <Route  path="/asd" component={GifList}/>
-                    </Switch>
-                </App>
+                <App />
             </BrowserRouter>
         </MuiThemeProvider>
     </Provider>,

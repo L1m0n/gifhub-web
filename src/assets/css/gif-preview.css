@@ -1,0 +1,35 @@
+.gif__preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.preview__wrapper {
+    max-width:400px;
+    min-width: 250px;
+    justify-content: center;
+    align-items: center;
+}
+.preview__wrapper img {
+    width: 100%;
+}
+.gif__bar--preview {
+    top: 0;
+    bottom: auto;
+    transform: translate(0);
+    box-shadow: none;
+}
+.preview__header:after {
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 1px 2px -1px #000;
+}
+.preview__header {
+    height: 48px;
+    padding: 0;
+    z-index: 5;
+}

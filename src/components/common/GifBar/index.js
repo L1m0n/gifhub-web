@@ -16,7 +16,7 @@ const GifBar = (props) => {
     };
 
     return (
-        <div className="gif__bar">
+        <div className={props.className}>
             <input ref={(i) => {input = i}}  className="copy-input" readOnly type="text" value={props.gif.gif} />
             <IconButton
                 onTouchTap={()=>{copy()}}

@@ -71,3 +71,6 @@ span {
     top: 0;
     right:0;
 }
+.menu__item {
+    text-decoration: none;
+}

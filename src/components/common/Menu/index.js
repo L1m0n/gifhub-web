@@ -1,5 +1,6 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
+import {Link} from 'react-router-dom';
 import MenuItem from 'material-ui/MenuItem';
 
 const Menu = (props) => {
@@ -9,8 +10,8 @@ const Menu = (props) => {
             open={props.open}
             onRequestChange={props.onRequestChange}
         >
-            <MenuItem onTouchTap={props.onTouchTap}>Menu Item</MenuItem>
-            <MenuItem onTouchTap={props.onTouchTap}>Menu Item 2</MenuItem>
+            <Link className="menu__item" to="/"><MenuItem onTouchTap={props.onTouchTap}>Menu Item</MenuItem></Link>
+            <Link className="menu__item" to="/gif-preview"><MenuItem onTouchTap={props.onTouchTap}>Menu Item 2</MenuItem></Link>
         </Drawer>
     )
 };

@@ -10,6 +10,10 @@ const gifs = (state = {gifs: []}, action) => {
             return Object.assign({}, state, {query: action.query});
         case actionTypes.SET_OFFSET:
             return Object.assign({}, state, {offset: action.offset});
+        case actionTypes.SET_SINGLE_GIF:
+            return Object.assign({}, state, {
+                singleGif: action.gif
+            });
         default:
             return state;
     }

@@ -10,7 +10,7 @@ class presenter extends React.Component {
         }
     }
     componentDidMount(){
-        this.props.fetchGifs(-25, 'gifs', 'dog');
+        this.props.fetchGifs(0, 'gifs', 'dog');
     }
 
     handleTouchTap = () => {
@@ -33,13 +33,14 @@ class presenter extends React.Component {
                         <Gif
                             key={gif.id}
                             gif={gif}
+                            setSingleGif={this.props.setSingleGif}
                             showSnackbar={this.handleTouchTap.bind(this)}
                         />
                     )
                 })}
                 <Snackbar
                     open={this.state.open}
-                    message="Url copied!"
+                    message="URL copied!"
                     autoHideDuration={2000}
                     style={{textAlign: 'center'}}
                     onRequestClose={this.handleRequestClose}

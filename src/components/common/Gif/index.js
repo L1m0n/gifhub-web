@@ -1,5 +1,7 @@
 import React from 'react';
 import GifBar from '../GifBar';
+import IconButton from 'material-ui/IconButton';
+import {Link} from 'react-router-dom';
 import ActionZoomIn from 'material-ui/svg-icons/action/zoom-in';
 require('../../../assets/css/gif.css');
 
@@ -34,18 +36,31 @@ class Gif extends React.Component{
                     style={{backgroundImage: 'url(' + this.props.gif.gif + ')'}}
                     className="gif">
                 </div>
-                <div className="gif__overlay">
-                    <ActionZoomIn
+                <div className="gif__overlay" >
+                    <Link to='gif-preview'>
+                        <IconButton
+                        title="Preview"
                         className="gif__zoom"
+                        onTouchTap={()=> this.props.setSingleGif(this.props.gif)}
+                        iconStyle={{
+                            width: 50,
+                            height: 50,
+                            color: '#FF4081'
+                        }}
                         style={{
                             width: 50,
                             height: 50,
                             marginTop: 55,
-                            color: '#FF4081'
+                            color: '#FF4081',
+                            padding: 0
                         }}
-                    />
+                    >
+                            <ActionZoomIn/>
+
+                    </IconButton>
+                    </Link>
                 </div>
-                <GifBar showSnackbar={this.props.showSnackbar} gif={this.props.gif}/>
+                <GifBar className="gif__bar" showSnackbar={this.props.showSnackbar} gif={this.props.gif}/>
             </div>
         )
     }

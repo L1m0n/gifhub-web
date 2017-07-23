@@ -1,14 +1,12 @@
 import React from 'react';
 import Header from '../common/Header';
-import SearchPage from '../pages/SearchPage';
 import 'font-awesome/css/font-awesome.min.css';
-
-const App = ({children}) => {
+import Main from '../common/Main';
+const App = () => {
     return(
         <div>
             <Header/>
-            {children}
-            <SearchPage/>
+            <Main/>
         </div>
     )
 };

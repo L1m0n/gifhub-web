@@ -10,7 +10,9 @@ class presenter extends React.Component {
         }
     }
     componentDidMount(){
-        this.props.fetchGifs(0, 'gifs', 'dog');
+        if (!this.props.gifs) {
+            this.props.fetchGifs(0, 'gifs', 'dog');
+        }
     }
 
     handleTouchTap = () => {

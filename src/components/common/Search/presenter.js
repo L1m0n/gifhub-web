@@ -15,7 +15,7 @@ class presenter extends React.Component {
         e.preventDefault();
         this.props.search(0, 'gifs', input.value);
         this.props.setQuery(input.value);
-        //console.log(input.value);
+        console.log(this.props.history.push('/'));
     }
     
     render(){

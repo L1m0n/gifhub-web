@@ -1,0 +1,78 @@
+.form__wrapper {
+    background: #fff;
+    padding: 50px 30px 30px;
+    color: #333;
+    font-family:Roboto, Arial, serif;
+    margin: 100px auto 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px, rgba(0, 0, 0, 0.2) 0 3px 10px;
+    max-width:360px;
+    box-sizing: border-box;
+}
+.form__field {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+}
+.field__input {
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(206, 198, 198);
+    height: 36px;
+    box-sizing:border-box ;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    transition: border-color 0.3s ease;
+}
+.field__label {
+    display: block;
+    top: 12px;
+    color: rgb(206, 198, 198);
+    left: 15px;
+    position: absolute;
+    font-size: 14px;
+    transition: font-size 0.3s ease, top 0.3s ease, color 0.3s ease;
+    z-index: 1;
+}
+.field__label--focused, .field__input:focus + .field__label {
+    font-size: 10px;
+    background: #fff;
+    z-index: 3;
+    top: -6px;
+}
+.form__button {
+    border:none;
+    display: block;
+    height: 36px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    background: rgb(255, 64, 129);
+}
+.field__tooltip {
+    display: block;
+    color: red;
+    font-size: 12px;
+    height: 0;
+    opacity: 0;
+    margin-top: 2px;
+    transition: height 0.3s ease, opacity 0.7s ease;
+}
+.form__field--error .field__tooltip {
+    height: 19px;
+    opacity: 1;
+}
+.form__field--error .field__label{
+    color: red;
+}
+.form__field--error .field__input {
+    border-color: red;
+}

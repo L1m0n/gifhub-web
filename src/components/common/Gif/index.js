@@ -37,28 +37,29 @@ class Gif extends React.Component{
                     className="gif">
                 </div>
                 <div className="gif__overlay" >
-                    <Link to='gif-preview'>
-                        <IconButton
-                        title="Preview"
-                        className="gif__zoom"
-                        onTouchTap={()=> this.props.setSingleGif(this.props.gif)}
-                        iconStyle={{
-                            width: 50,
-                            height: 50,
-                            color: '#FF4081'
-                        }}
-                        style={{
-                            width: 50,
-                            height: 50,
-                            marginTop: 55,
-                            color: '#FF4081',
-                            padding: 0
-                        }}
-                    >
-                            <ActionZoomIn/>
+                    <IconButton
+                    title="Preview"
+                    className="gif__zoom"
+                    onTouchTap={()=> {
+                        this.props.setSingleGif(this.props.gif);
+                        this.props.showPopup();
+                    }}
+                    iconStyle={{
+                        width: 50,
+                        height: 50,
+                        color: '#FF4081'
+                    }}
+                    style={{
+                        width: 50,
+                        height: 50,
+                        marginTop: 55,
+                        color: '#FF4081',
+                        padding: 0
+                    }}
+                >
+                        <ActionZoomIn/>
 
-                    </IconButton>
-                    </Link>
+                </IconButton>
                 </div>
                 <GifBar className="gif__bar" showSnackbar={this.props.showSnackbar} gif={this.props.gif}/>
             </div>

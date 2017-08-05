@@ -1,12 +1,14 @@
 import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
 import Gif from '../Gif';
+import GifPopup from '../GifPopup';
 
 class presenter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: false
+            open: false,
+            popupOpen: false
         }
     }
     componentDidMount(){
@@ -27,6 +29,14 @@ class presenter extends React.Component {
         });
     };
 
+    openPopup = () => {
+        this.setState({popupOpen: true});
+    };
+
+    closePopup = () => {
+        this.setState({popupOpen: false});
+    };
+
     render(){
         return(
             <div className="gif-list">
@@ -36,6 +46,7 @@ class presenter extends React.Component {
                             key={gif.id}
                             gif={gif}
                             setSingleGif={this.props.setSingleGif}
+                            showPopup={this.openPopup.bind(this)}
                             showSnackbar={this.handleTouchTap.bind(this)}
                         />
                     )
@@ -46,6 +57,10 @@ class presenter extends React.Component {
                     autoHideDuration={2000}
                     style={{textAlign: 'center'}}
                     onRequestClose={this.handleRequestClose}
+                />
+                <GifPopup
+                    open={this.state.popupOpen}
+                    close={this.closePopup.bind(this)}
                 />
             </div>
         )

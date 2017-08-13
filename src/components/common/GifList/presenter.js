@@ -11,11 +11,6 @@ class presenter extends React.Component {
             popupOpen: false
         }
     }
-    componentDidMount(){
-        if (!this.props.gifs) {
-            this.props.fetchGifs(0, 'gifs', 'dog');
-        }
-    }
 
     handleTouchTap = () => {
         this.setState({
@@ -29,8 +24,10 @@ class presenter extends React.Component {
         });
     };
 
-    openPopup = () => {
-        this.setState({popupOpen: true});
+    openPopup = (gif) => {
+        this.setState({
+            popupOpen: true
+        });
     };
 
     closePopup = () => {

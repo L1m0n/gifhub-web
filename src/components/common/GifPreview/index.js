@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import presenter from './presenter';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         gif: state.data.singleGif
     }

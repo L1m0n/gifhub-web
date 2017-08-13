@@ -6,17 +6,34 @@ const GifPopup = (props) => {
     return(
         <div>
             <Dialog
-                styles={{
-                    paddingTop: 40
-                }}
+                children={<GifPreview/>}
+                repositionOnUpdate={false}
                 modal={false}
                 open={props.open}
                 onRequestClose={props.close}
-            >
-            <GifPreview/>
-            </Dialog>
+                bodyStyle={{
+                    padding: 0
+                }}
+                contentStyle={{
+                    padding: 0,
+                    paddingTop: 48,
+                    width: 'max-content',
+                    maxWidth: 'none',
+                    transform: 'none'
+                }}
+                style={{
+                    paddingTop: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+                overlayStyle={{
+                    background: 'rgba(0, 0, 0, 0.7)'
+                }}
+            />
         </div>
     )
 };
+
 
 export default GifPopup;

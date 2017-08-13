@@ -27,33 +27,11 @@ class presenter extends React.Component {
     render() {
         return (
             <div className="gif__preview">
-                <div className="preview__wrapper">
-
-                    {this.props.gif &&
-                    <Card>
-                        <CardHeader
-                            className="preview__header"
-                            style={styles.header}
-                            expandable={false}
-                        >
-                            <GifBar
-                                className='gif__bar gif__bar--preview'
-                                showSnackbar={this.handleTouchTap.bind(this)} gif={this.props.gif}
-                            />
-                        </CardHeader>
-                        <CardMedia>
-                            <img src={this.props.gif.original} alt=""/>
-                        </CardMedia>
-                    </Card>
-                    }
-                </div>
-                <Snackbar
-                    open={this.state.open}
-                    message="URL copied!"
-                    autoHideDuration={2000}
-                    style={{textAlign: 'center'}}
-                    onRequestClose={this.handleRequestClose}
+                <GifBar
+                    className='gif__bar gif__bar--preview'
+                    showSnackbar={this.handleTouchTap.bind(this)} gif={this.props.gif}
                 />
+                <img src={this.props.gif.original} alt=""/>
             </div>
         )
     }

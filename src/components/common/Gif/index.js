@@ -1,7 +1,6 @@
 import React from 'react';
 import GifBar from '../GifBar';
 import IconButton from 'material-ui/IconButton';
-import {Link} from 'react-router-dom';
 import ActionZoomIn from 'material-ui/svg-icons/action/zoom-in';
 require('../../../assets/css/gif.css');
 

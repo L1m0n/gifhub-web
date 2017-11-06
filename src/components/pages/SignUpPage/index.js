@@ -1,10 +1,10 @@
 import React from 'react';
-import SignUpForm from '../../common/SignUpForm';
+import SignUpForm from './SignUpForm';
 
-const SignUpPage = () => {
+const SignUpPage = (props) => {
     return (
         <div>
-            <SignUpForm/>
+            <SignUpForm />
         </div>
     )
 };

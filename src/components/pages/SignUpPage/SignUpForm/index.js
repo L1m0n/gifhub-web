@@ -1,12 +1,14 @@
-import TextField from '../TextField';
+import TextField from '../../../common/TextField/index';
 import classnames from 'classnames';
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import signup from '../../../../actions/signup';
+import {connect} from 'react-redux';
 
-require('../../../assets/css/form.css');
-class SignUpForm extends React.Component {
+require('../../../../assets/css/form.css');
+class Form extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             fields: {
                 passwordConfirmation: '',
@@ -91,7 +93,7 @@ class SignUpForm extends React.Component {
         this.setState({errors, isValid: isValid});
 
         if(isValid) {
-            this.props.signup(this.state.fields);
+            this.props.register(this.state.fields);
         }
 
     };
@@ -155,5 +157,25 @@ class SignUpForm extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        register: (data) => {
+            dispatch(signup(data));
+        }
+    }
+};
+
+const mapStateToProps = (state) => {
+    return {
+        state
+    }
+};
+
+const SignUpForm = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Form);
+
 
 export default SignUpForm;
